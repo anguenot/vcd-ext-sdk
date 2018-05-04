@@ -155,12 +155,14 @@ public class JsonMappingInfoPlugin extends Plugin {
             final JAnnotatable annotatableParent = classOutline.getSuperClass().implClass;
 
             JAnnotationArrayMember annotationValues = null;
+            /*
             for (JAnnotationUse annot : annotatableParent.annotations()) {
                 if (annot.getAnnotationClass().fullName().equals(JsonSubTypes.class.getCanonicalName())) {
                     annotationValues = (JAnnotationArrayMember)annot.getAnnotationMembers().get("value");
                     break;
                 }
             }
+            */
             if (annotationValues == null) {
                 annotationValues = annotatableParent.annotate(JsonSubTypes.class).paramArray("value");
             }

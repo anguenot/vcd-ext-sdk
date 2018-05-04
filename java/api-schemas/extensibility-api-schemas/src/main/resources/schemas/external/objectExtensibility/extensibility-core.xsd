@@ -8,8 +8,6 @@
     xmlns="http://www.vmware.com/vcloud/extensibility/v1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-    xmlns:meta="http://www.vmware.com/vcloud/meta"
-    jaxb:extensionBindingPrefixes="meta"
     elementFormDefault="qualified"
     targetNamespace="http://www.vmware.com/vcloud/extensibility/v1.0"
     version="1.0">
@@ -174,11 +172,6 @@
     </xs:complexType>
 
     <xs:complexType name="DataType" abstract="true">
-        <xs:annotation>
-            <xs:appinfo>
-                <meta:jsonTypeInfo propertyName="type" />
-            </xs:appinfo>
-        </xs:annotation>
         <xs:attribute name="name" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
@@ -189,11 +182,6 @@
     </xs:complexType>
 
     <xs:complexType name="LongDataType">
-        <xs:annotation>
-            <xs:appinfo>
-                <meta:jsonSubTypeInfo name="long" />
-            </xs:appinfo>
-        </xs:annotation>
         <xs:complexContent>
             <xs:extension base="DataType">
                 <xs:attribute name="value" use="required">
@@ -208,11 +196,6 @@
     </xs:complexType>
 
     <xs:complexType name="BooleanDataType">
-        <xs:annotation>
-            <xs:appinfo>
-                <meta:jsonSubTypeInfo name="boolean" />
-            </xs:appinfo>
-        </xs:annotation>
         <xs:complexContent>
             <xs:extension base="DataType">
                 <xs:attribute name="value" type="xs:boolean" use="required" />
@@ -221,11 +204,6 @@
     </xs:complexType>
 
     <xs:complexType name="StringDataType">
-        <xs:annotation>
-            <xs:appinfo>
-                <meta:jsonSubTypeInfo name="string" />
-            </xs:appinfo>
-        </xs:annotation>
         <xs:complexContent>
             <xs:extension base="DataType">
                 <xs:attribute name="value" type="xs:string" use="required" />
@@ -234,11 +212,6 @@
     </xs:complexType>
 
     <xs:complexType name="StringArrayDataType">
-        <xs:annotation>
-            <xs:appinfo>
-                <meta:jsonSubTypeInfo name="list" />
-            </xs:appinfo>
-        </xs:annotation>
         <xs:complexContent>
             <xs:extension base="DataType">
                 <xs:sequence>

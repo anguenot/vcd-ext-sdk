@@ -12,6 +12,7 @@
 *.iml
 *.ipr
 *.iws
+.idea/
 
 # Directories created during the build process
 target/
